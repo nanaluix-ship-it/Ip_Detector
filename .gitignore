@@ -1,12 +1,24 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
+.venv/
 venv/
-.venv
-.pytest_cache/
-.mypy_cache/
-.idea
-.DS_Store
+*.egg-info/
+dist/
+build/
 
-.gigaide
+# Test & Allure
+.pytest_cache/
+allure-results/
+allure-report/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
