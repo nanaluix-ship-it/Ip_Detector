@@ -1,24 +1,56 @@
-# Python
+# --- Python ---
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Виртуальное окружение (то, что у тебя активировано как .venv)
 .venv/
 venv/
-*.egg-info/
-dist/
-build/
+ENV/
+env/
 
-# Test & Allure
+# --- Тесты и покрытие ---
 .pytest_cache/
-allure-results/
-allure-report/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+.hypothesis/
 
-# IDE
+# --- IDE (Giga IDE / IntelliJ / PyCharm) ---
 .idea/
+*.iml
+*.ipr
+*.iws
+out/
 .vscode/
-*.swp
-*.swo
 
-# OS
-.DS_Store
+# --- Windows ---
 Thumbs.db
+.DS_Store
+
+# --- Переменные окружения и секреты ---
+.env
+.env.local
+.env.*.local
+secrets.json
+credentials.json
+config/secrets.yaml

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ip-geo-upload"
+version = "0.1.0"
+description = "IP resolver, geo locator and Yandex Disk uploader"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.32.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]

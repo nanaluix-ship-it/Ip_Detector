@@ -3,6 +3,7 @@ import json
 import time
 import requests
 from typing import Any, Dict
+from requests.exceptions import JSONDecodeError
 
 
 class IpResolver:
@@ -45,10 +46,12 @@ class GeoLocator:
             if not data.get("city"):
                 print("[ВНИМАНИЕ] Город не определён — возможно, политика API изменилась.")
             return data
+        # Сначала ловим ошибку парсинга JSON
+        except JSONDecodeError as e:
+            raise RuntimeError(f"Ошибка парсинга JSON от ipinfo: {e}") from e
+        # Потом уже сетевые и HTTP-ошибки
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Ошибка запроса к ipinfo: {e}") from e
-        except ValueError as e:
-            raise RuntimeError(f"Ошибка парсинга JSON от ipinfo: {e}") from e
 
 
 class YandexDiskUploader:
